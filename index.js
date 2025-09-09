@@ -51,9 +51,9 @@ function main(ev) {
 		ctx.font = "15px Arial";
 		ctx.fillStyle = "black";
 		ctx.fillText(`Mouse: ${mousePos.x},${mousePos.y}`, 300, 20);
+		
 		//วาดภูเขาปิ้วว
 		//รูปภูเขาเเรกกกกกก
-
 		ctx.beginPath();
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
@@ -79,22 +79,12 @@ function main(ev) {
 		ctx.stroke();
 		ctx.closePath();
 
-   //วาดพระอาทิตย์
-		ctx.beginPath();
-		ctx.arc(300, 80, 20, 0, Math.PI * 2);
-		ctx.fillStyle = "rgba(172, 27, 7, 1)";
-		ctx.fill();
-		ctx.strokeStyle = "red";
-		ctx.lineWidth = 4;
-		ctx.stroke();
-		ctx.closePath();
 
 		//ส่วนแฉกพระอาทิตย์
 		ctx.save(); // เก็บสถานะก่อนแปลงพิกัด
 		ctx.translate(300, 80); // ย้าย origin ไปจุดกลางพระอาทิตย์
 		ctx.rotate(angel);      // หมุนตามมุม angel
 		ctx.translate(-300, -80); // ย้ายกลับเพื่อวาดจากพิกัดเดิม
-
 		// วาดแฉกพระอาทิตย์
 		ctx.beginPath();
 		ctx.moveTo(265,35);
@@ -122,33 +112,125 @@ function main(ev) {
 		ctx.lineTo(250,65);
 		ctx.lineTo(270,67);
 		ctx.closePath();
-		ctx.fillStyle = "rgba(250, 225, 64, 0.5)";
+		ctx.fillStyle = "rgba(255, 16, 16, 1)";
 		ctx.fill();
 		ctx.strokeStyle = "red";
 		ctx.lineWidth = 2;
 		ctx.stroke();
 		ctx.restore(); // คืนค่าพิกัดเดิม
 		
+   //วาดพระอาทิตย์
+		ctx.beginPath();
+		ctx.arc(300, 80, 20, 0, Math.PI * 2);
+		ctx.fillStyle = "rgba(255, 123, 0, 1)";
+		ctx.fill();
+		ctx.strokeStyle = "red";
+		ctx.lineWidth = 4;
+		ctx.stroke();
+		ctx.closePath();
+
 		
 		//เติมฟิลสนามหญ้าข้างล่าล่าง
 		ctx.fillStyle = "rgba(78, 163, 97, 1)";
 		ctx.fillRect(0, 200, 800, 600);
 
-		//วาดแม่น้ำคงคา555555555
+
+		//วาดแม่น้ำคงคา
 		ctx.beginPath();
 		ctx.moveTo(300, 200);
 		ctx.bezierCurveTo(100, 500, 600, 500, 280, 600);
 		ctx.lineTo(560, 600); 
 		ctx.bezierCurveTo(600, 500, 200, 400, 500, 200); 
-		ctx.fillStyle = "rgba(124, 223, 218, 1)"; 
+		ctx.fillStyle = "rgba(46, 199, 226, 1)"; 
 		ctx.fill();
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
 		ctx.stroke();
 
+		//ส่วนของคลื่นน้ำ
+		ctx.beginPath();//คลื่นน้ำที่ 1
+		ctx.strokeStyle= "rgba(255,255,255,1)"
+		ctx.moveTo(280,270);
+		ctx.bezierCurveTo(330,210,350,300,400,250);
+		ctx.stroke();
+		ctx.beginPath();//คลื่นที่ 2
+		ctx.moveTo(280,390);
+		ctx.bezierCurveTo(300,340,355,420,380,370);
+		ctx.stroke();
+		ctx.beginPath();//คลื่นที่ 3
+		ctx.moveTo(380,570);
+		ctx.bezierCurveTo(420,500,480 ,600 ,530,540)
+		ctx.stroke();
+
+
+		//ส่วนนาเเละต้นข้าว
+		ctx.fillStyle = "rgba(163, 116, 15, 1)"
+		ctx.fillRect(30,470,150,70)
+		ctx.beginPath();
+		ctx.strokeStyle = "green"
+		ctx.lineWidth = 5;
+		ctx.moveTo(45,490)
+		ctx.quadraticCurveTo(55,500,60,490);
+		ctx.stroke();
+		ctx.moveTo(75,490);
+		ctx.quadraticCurveTo(80,500,90,490);
+		ctx.stroke();
+		ctx.moveTo(105,490);
+		ctx.quadraticCurveTo(110,500,120,490);
+		ctx.stroke();
+		ctx.moveTo(135,490);
+		ctx.quadraticCurveTo(140,500,150,490);
+		ctx.stroke();
+		ctx.moveTo(45,520);
+		ctx.quadraticCurveTo(55,540,60,520);
+		ctx.stroke();
+		ctx.moveTo(75,520);
+		ctx.quadraticCurveTo(80,540,90,520);
+		ctx.stroke();
+		ctx.moveTo(105,520);
+		ctx.quadraticCurveTo(110,540,120,520);
+		ctx.stroke();
+		ctx.moveTo(135,520);
+		ctx.quadraticCurveTo(140,540,150,520);
+		ctx.stroke();
+
+
+		//วาดทานตะวัน
+		ctx.beginPath(); //ส่วนแฉก
+		ctx.moveTo(232,492);
+		ctx.quadraticCurveTo(220,475,240,490);
+		ctx.quadraticCurveTo(247,470,250,495)
+		ctx.quadraticCurveTo(265,480,255,505)
+		ctx.quadraticCurveTo(271,513,256,515)
+		ctx.quadraticCurveTo(243,518,240,511)
+		ctx.quadraticCurveTo(227,519,227,507)
+		ctx.quadraticCurveTo(215,497,232,493)
+		ctx.fillStyle = "yellow"
+		ctx.fill();
+		//ส่วนก้าน
+		ctx.beginPath(); 
+		ctx.strokeStyle = "rgba(2, 49, 20, 1)"
+		ctx.moveTo(240,550);
+		ctx.lineTo(240,500);
+		ctx.stroke();
+		//ตรงกลางทานตะวัน
+		ctx.beginPath();
+		ctx.arc(240,500,10,0,Math.PI*2);
+		ctx.fillStyle = "rgba(202, 100, 32, 1)"
+		ctx.fill();
+    //ส่วนใบ
+		ctx.beginPath();
+		ctx.moveTo(240,535);
+		ctx.quadraticCurveTo(215,515,240,525);
+		ctx.fillStyle = "rgba(2, 49, 20, 1)"
+		ctx.fill();
+		ctx.beginPath();
+		ctx.moveTo(240,540);
+		ctx.quadraticCurveTo(270,520,240,530);
+		ctx.fill();
+
 
 		//ส่วนของการวาดบ้านน
-
 		//ชิ้นส่วนตัวบ้าน 1
 		ctx.beginPath();
 		ctx.moveTo(480,300);
@@ -176,8 +258,8 @@ function main(ev) {
 
 		//ชิ้นส่วนตัวบ้าน 2
 		ctx.beginPath();
-		ctx.moveTo(650,300);
-		ctx.lineTo(650,370);
+		ctx.moveTo(700,300);
+		ctx.lineTo(700,370);
 		ctx.lineTo(580,370);
 		ctx.lineTo(580,300);
 		ctx.strokeStyle = "black";
@@ -186,12 +268,11 @@ function main(ev) {
 		ctx.stroke();
 		ctx.fillStyle = "rgba(102, 88, 74, 1)";
 		ctx.fill();
-
 		//ชิ้นส่วนหลังคาบ้าน 2
 		ctx.beginPath();
 		ctx.moveTo(530,250);
-		ctx.lineTo(650,250);
-		ctx.lineTo(650,300);
+		ctx.lineTo(700,250);
+		ctx.lineTo(700,300);
 		ctx.lineTo(580,300);
 		ctx.closePath();
 		ctx.stroke();
@@ -199,7 +280,6 @@ function main(ev) {
 		ctx.fill();
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
-	
 
 		//ส่วนประตูบ้าน
 		ctx.beginPath();
@@ -210,26 +290,28 @@ function main(ev) {
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
 		ctx.closePath();
-		ctx.stroke();
-		ctx.fillStyle = "rgba(0, 0, 0, 1)";
+		ctx.fillStyle = "rgba(255, 255, 255, 1)";
 		ctx.fill();
-
-		//วาดหน้าต่่างบ้าน
+		ctx.stroke();
+ 
+		//หน้าต่างบ้าน
 		ctx.beginPath();
-		ctx.moveTo(630,350);
-		ctx.lineTo(610,350);
-		ctx.lineTo(610,330);
-		ctx.lineTo(630,330);
+		ctx.moveTo(620,350);
+		ctx.lineTo(600,350);
+		ctx.lineTo(600,330);
+		ctx.lineTo(620,330);
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
 		ctx.closePath();
-		ctx.stroke();
-		ctx.fillStyle = "rgba(0, 0, 0, 1)";
 		ctx.fill();
-		
-		
-		//ใบไม้
-		ctx.beginPath();
+		ctx.stroke();
+		ctx.fillStyle = "rgba(255, 255, 255, 1)";
+		ctx.fillRect(650,330,20,20);
+		ctx.strokeRect(650,330,20,20);
+
+
+		//วาดต้นไม้
+		ctx.beginPath(); //ช่วงของใบไม้
 		ctx.moveTo(85,370);
 		ctx.quadraticCurveTo(20,320,60,310);
 		ctx.quadraticCurveTo(50,240,100,290);
@@ -242,9 +324,9 @@ function main(ev) {
 		ctx.stroke();
 		ctx.fillStyle = "rgba(0, 255, 0, 1)";
 		ctx.fill();
-
-		//ลำต้น
-		ctx.beginPath();
+		
+		//เริ่มช่วงลำต้น
+		ctx.beginPath(); 
 		ctx.lineWidth = 4;
 		ctx.strokeStyle = "black";
 		ctx.moveTo(80,450);
@@ -258,9 +340,39 @@ function main(ev) {
 		ctx.stroke();
 		ctx.fillStyle = "rgba(150, 115, 79, 1)";
 		ctx.fill();
-		
-		
 
+		//วาดต้นสอง
+		// วาดช่วงใบ
+		ctx.beginPath();  
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = "black";
+		ctx.moveTo(700,490);
+		ctx.quadraticCurveTo(650,440,690,430);
+		ctx.quadraticCurveTo(680,380,730,410);
+		ctx.quadraticCurveTo(752,350,770,410);
+		ctx.quadraticCurveTo(800,390,790,440);
+		ctx.quadraticCurveTo(820,470,790,490)
+		ctx.closePath();
+		ctx.stroke();
+		ctx.fillStyle = "rgba(12, 49, 5, 1)";
+		ctx.fill();
+
+		//ช่วงลำต้น
+		ctx.beginPath(); 
+		ctx.lineWidth = 4;
+		ctx.strokeStyle = "black";
+		ctx.moveTo(700,570);
+		ctx.quadraticCurveTo(730,520,700,460);
+		ctx.lineTo(730,480);
+		ctx.lineTo(740,450);
+		ctx.lineTo(760,480);
+		ctx.lineTo(790,460);
+		ctx.quadraticCurveTo(750,520,790,570)
+		ctx.closePath()
+		ctx.stroke();
+		ctx.fillStyle = "rgba(160, 126, 14, 1)";
+		ctx.fill();
+		
 		//สะพาน
 		ctx.fillStyle = "rgba(85, 39, 7, 1)";
 		ctx.fillRect(330, 530, 220, -50);
@@ -291,6 +403,25 @@ function main(ev) {
 		ctx.stroke();
 
 
+		//วาดสติกเเมนกำลังข้ามสะพาน
+		ctx.beginPath();
+		ctx.arc(515,425,10,0,Math.PI*2);
+		ctx.fillStyle = "black"
+		ctx.strokeStyle = "black";
+		ctx.lineWidth = 4
+		ctx.fill();
+		ctx.moveTo(515,435);
+		ctx.lineTo(515,465);
+		ctx.lineTo(500,480);
+		ctx.moveTo(515,465);
+		ctx.lineTo(530,480);
+		ctx.moveTo(515,440);
+		ctx.lineTo(500,460);
+		ctx.moveTo(515,440);
+		ctx.lineTo(530,460);
+		ctx.stroke();
+	
+		
 		//วาดก้อนเมฆ
 		ctx.beginPath();
 		ctx.moveTo(cloudX, 60); // ใช้ cloudX แทนตำแหน่งคงที่ แล้วบวกค่า ของเคิฟจาก ค่าคงที่ของ x เอา
@@ -318,7 +449,7 @@ function main(ev) {
 		if (config.debug) FPS.show(ctx, 10, 28);
 
 		// ใช้ requestAnimationFrame เพื่อเรียกใช้ฟังก์ชัน draw ต่อไป
-		angel += 0.002;
+		angel += 0.003;
 		requestAnimationFrame(draw);
 	}
 	// เริ่มต้นการวาดภาพบน canvas

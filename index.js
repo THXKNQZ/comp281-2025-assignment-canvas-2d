@@ -125,10 +125,9 @@ function main(ev) {
 		ctx.strokeStyle = "red";
 		ctx.lineWidth = 4;
 		ctx.stroke();
-		ctx.closePath();
 
 		
-		//เติมฟิลสนามหญ้าข้างล่าล่าง
+		//เติมฟิลสนามหญ้าข้างล่าง
 		ctx.fillStyle = "rgba(78, 163, 97, 1)";
 		ctx.fillRect(0, 200, 800, 600);
 

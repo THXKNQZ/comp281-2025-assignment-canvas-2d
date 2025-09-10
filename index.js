@@ -50,7 +50,7 @@ function main(ev) {
 		//ทำตัวเเสดงพิกัดบนจอ
 		ctx.font = "15px Arial";
 		ctx.fillStyle = "black";
-		ctx.fillText(`Mouse: ${mousePos.x},${mousePos.y}`, 300, 20);
+		ctx.fillText(`Mouse: ${mousePos.x},${mousePos.y}`, 10, 45);
 		
 		//วาดภูเขาปิ้วว
 		//รูปภูเขาเเรกกกกกก
@@ -67,22 +67,21 @@ function main(ev) {
 
 		//รูปภูเขาที่่สองง
 		ctx.beginPath();
+		ctx.strokeStyle = "black";
+		ctx.lineWidth = 4;
 		ctx.moveTo(300, 200);
 		ctx.bezierCurveTo(600, -150, 500, 300, 800, 80);
 		ctx.lineTo(800, 200);
-		ctx.lineTo(300, 200);
-		ctx.closePath();
 		ctx.fillStyle = "green";
 		ctx.fill();
-		ctx.strokeStyle = "black";
-		ctx.lineWidth = 4;
-		ctx.stroke();
 		ctx.closePath();
+		ctx.stroke();
+		
 
 
 		//ส่วนแฉกพระอาทิตย์
 		ctx.save(); // เก็บสถานะก่อนแปลงพิกัด
-		ctx.translate(300, 80); // ย้าย origin ไปจุดกลางพระอาทิตย์
+		ctx.translate(300, 80); // ย้ายไปจุดกลางพระอาทิตย์
 		ctx.rotate(angel);      // หมุนตามมุม angel
 		ctx.translate(-300, -80); // ย้ายกลับเพื่อวาดจากพิกัดเดิม
 		// วาดแฉกพระอาทิตย์
@@ -161,6 +160,7 @@ function main(ev) {
 		ctx.moveTo(380,570);
 		ctx.bezierCurveTo(420,500,480 ,600 ,530,540)
 		ctx.stroke();
+		ctx.beginPath();
 
 
 		//ส่วนนาเเละต้นข้าว
@@ -293,7 +293,7 @@ function main(ev) {
 		ctx.fillStyle = "rgba(255, 255, 255, 1)";
 		ctx.fill();
 		ctx.stroke();
- 
+
 		//หน้าต่างบ้าน
 		ctx.beginPath();
 		ctx.moveTo(620,350);
@@ -439,8 +439,6 @@ function main(ev) {
 		if (cloudX > config.width + 100) { //ถ้ามันเกินกว่าความกว้างของจอ +100 จุด
 		cloudX = -100; // รีเซ็ตกลับทางซ้าย -100 จุด
 		}
-
-		
 
 		// เขตสิ้นสุดของการวาดรูป
 

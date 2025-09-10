@@ -159,6 +159,10 @@ function main(ev) {
 		ctx.bezierCurveTo(420,500,480 ,600 ,530,540)
 		ctx.stroke();
 		ctx.beginPath();
+		ctx.beginPath();
+		ctx.moveTo(330,450);
+		ctx.bezierCurveTo(345,410,390,470,410,430);
+		ctx.stroke();
 
 
 		//ส่วนนาเเละต้นข้าว

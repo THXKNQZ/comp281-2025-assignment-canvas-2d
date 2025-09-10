@@ -57,9 +57,8 @@ function main(ev) {
 		ctx.beginPath();
 		ctx.strokeStyle = "black";
 		ctx.lineWidth = 4;
-		ctx.moveTo(0,180);
+		ctx.moveTo(0,200);
 		ctx.quadraticCurveTo(150,-100,300,200);
-		ctx.lineTo(0,200);
 		ctx.closePath();
 		ctx.fillStyle = "green";
 		ctx.fill();
